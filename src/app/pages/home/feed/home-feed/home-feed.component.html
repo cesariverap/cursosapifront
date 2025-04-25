@@ -1,0 +1,47 @@
+
+@if(!loadCouses){
+    <div class="grid m-0">
+        @for (item of courses; track item.link) {
+            <div class="col-3">
+                <div class="card couse">
+                    <div>
+                       <img src="{{item.image_url}}" alt="" srcset=""> 
+                    </div>
+                    
+                    <h2>{{item.title}}</h2>
+                </div>
+            </div>
+        }
+        <div class="col-12">
+            <p-paginator 
+            (onPageChange)="onPageChange($event)"
+            [first]="page"
+            [rows]="18" 
+            [totalRecords]="totalCursos" />
+        </div>
+    </div>
+}@else{
+    <div class="grid m-0">
+        
+            <div class="col-3">
+                <div class="card">
+                    <p-skeleton height="4rem" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <p-skeleton height="4rem" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <p-skeleton height="4rem" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <p-skeleton height="4rem" />
+                </div>
+            </div>
+    </div>
+}
