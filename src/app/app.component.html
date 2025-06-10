@@ -1,1 +1,62 @@
-<router-outlet></router-outlet>
+<!-- app.component.html -->
+<div class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Hero Section -->
+  <app-hero-section (search)="searchCourse($event)"></app-hero-section>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Sidebar -->
+      <aside class="lg:w-64 space-y-6">
+        <div class="bg-white rounded-lg shadow">
+          <div class="p-4 border-b">
+            <h2 class="text-lg font-bold">Categorías</h2>
+          </div>
+          <div class="p-4 space-y-2">
+            <!-- <app-category-filter 
+              [categories]="categories"
+              [selectedCategory]="selectedCategory"
+              (categoryChange)="handleCategoryChange($event)">
+            </app-category-filter> -->
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow">
+          <div class="p-4 border-b">
+            <h2 class="text-lg font-bold">Filtros</h2>
+          </div>
+          <div class="p-4 space-y-4">
+            <!-- <app-sort-filter 
+              [sortBy]="sortBy"
+              (sortChange)="handleSortChange($event)">
+            </app-sort-filter> -->
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold">
+            Todos los cursos
+          </h2>
+          <p class="text-gray-500">
+            Se encontró 1 curso
+          </p>
+        </div>
+
+        <!-- Course Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            @for (item of coursesList; track $index) {
+                <app-course-card [course]="item"></app-course-card>
+            }
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>
