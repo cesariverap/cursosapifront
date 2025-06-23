@@ -43,7 +43,7 @@
             Todos los cursos
           </h2>
           <p class="text-gray-500">
-            Se encontró 1 curso
+            Se encontró {{coursesList.length}} {{coursesList.length === 0 ? 'curso' : 'cursos'}}
           </p>
         </div>
 
@@ -53,6 +53,11 @@
                 <app-course-card [course]="item"></app-course-card>
             }
         </div>
+        <div class="mt-3">
+            @for (item of tempParginator; track $index) {
+              <div class="parginator bg-gray-100" [ngClass]="{'parginator-selected': page === item}" (click)="getCouses(item)">{{item}}</div>
+            }
+        </div>  
       </main>
     </div>
   </div>
@@ -60,3 +65,5 @@
   <!-- Footer -->
   <app-footer></app-footer>
 </div>
+
+<router-outlet></router-outlet>

@@ -17,4 +17,8 @@ export class CousesApiService {
   totalPages(){
     return this.http.get(`${this.url}/api/cursos/total_pages`);
   }
+
+  detailCourse(body){
+     return this.http.get(`${this.url}/api/cursos/info_from_url=${body}`);
+  }
 }

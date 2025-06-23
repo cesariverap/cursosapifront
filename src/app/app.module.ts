@@ -13,6 +13,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { SearchComponent } from './components/search/search.component';
 import { SortFilterComponent } from './components/sort-filter/sort-filter.component';
+import { DetailCourseComponent } from './components/detail-course/detail-course.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarModule } from 'primeng/sidebar';
 // import { CourseCardComponent } from './course-card/course-card.component';
 // import { CategoryFilterComponent } from './category-filter/category-filter.component';
 // import { SortFilterComponent } from './sort-filter/sort-filter.component';
@@ -30,12 +34,16 @@ import { SortFilterComponent } from './components/sort-filter/sort-filter.compon
     HeaderComponent,
     HeroSectionComponent,
     SearchComponent,
-    SortFilterComponent
+    SortFilterComponent,
+    DetailCourseComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    SidebarModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([])
   ],
   providers: [],
