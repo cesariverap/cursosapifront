@@ -19,6 +19,6 @@ export class CousesApiService {
   }
 
   detailCourse(body){
-     return this.http.get(`${this.url}/api/cursos/info_from_url=${body}`);
+     return this.http.get(`${this.url}/api/cursos/info_from_url?url=${body}`);
   }
 }

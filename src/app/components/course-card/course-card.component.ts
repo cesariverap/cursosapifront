@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as CryptoJS from 'crypto-js';
-
 @Component({
   selector: 'app-course-card',
   templateUrl: './course-card.component.html',
@@ -13,7 +11,7 @@ export class CourseCardComponent {
 
   }
  goToCouse(link){
-  let hash = CryptoJS.MD5(link).toString();
+  let hash = btoa(link);
   this.router.navigate([`detail`], { queryParams: { course: hash } })
  }
 }
