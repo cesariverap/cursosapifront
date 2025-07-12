@@ -35,7 +35,7 @@ export class DetailCourseComponent implements OnInit{
 
         }
       } catch (error) {
-
+        this.getDetail();
       }
     }
 
