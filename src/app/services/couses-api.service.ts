@@ -5,7 +5,7 @@ import { HttpClient} from '@angular/common/http';
 })
 
 export class CousesApiService {
-  url = "https://coursesapi-c7bmgxdca4b2hpcv.brazilsouth-01.azurewebsites.net";
+  url = "https://apiparacursosdeestudiantes-grbfahavd7d6hkgk.brazilsouth-01.azurewebsites.net/";
   constructor(
     private http: HttpClient
   ) {}
